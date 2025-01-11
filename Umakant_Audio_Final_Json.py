@@ -32,6 +32,20 @@ Guidelines:
 OUTPUT FORMAT:
       - I need a proper JSON as output
       - The Json structure should represent the complete conversation with Speaker Information as well as Emotion in each step.
+      {
+      Call Details:{
+        Number Of Speaker:
+        Transcript:{
+                 Speaker A:(If u cannot Find out then say Unknown)
+                 Voice : Extracted Text From Audio
+                 Emotion:
+                 Speaker B:(If u cannot Find out then say Unknown)
+                 Voice : Extracted Text From Audio
+                 Emotion:
+                 .........
+                    }
+      }
+      }
 
 '''
 
