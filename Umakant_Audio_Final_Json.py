@@ -12,7 +12,7 @@ def upload_to_gemini(path, mime_type=None):
     return file
 
 generation_config = {
-    "temperature": 0.4,
+    "temperature": 0.3,
     "response_mime_type": "application/json"
 }
 
@@ -27,11 +27,10 @@ Guidelines:
 
       -Use clear and concise language.
       -Also Use Proper Punctuations In the Transcript.
-      -If there are overlapping speeches, make a note of it and attempt to separate the speakers as accurately as possible.
-
+      
 OUTPUT FORMAT:
       - I need a proper JSON as output
-      - The Json structure should represent the complete conversation with Speaker Information as well as Emotion in each step.
+      - The Json structure should represent the complete conversation with Speaker Information alongwith emotion detected at each step.
       {
       Call Details:{
         Number Of Speaker:
@@ -42,11 +41,9 @@ OUTPUT FORMAT:
                  Speaker B:(If u cannot Find out then say Unknown)
                  Voice : Extracted Text From Audio
                  Emotion:
-                 .........
-                    }
+                 .........}
       }
       }
-
 '''
 
 model = genai.GenerativeModel(
@@ -78,9 +75,19 @@ if uploaded_file is not None:
             response = model.generate_content([myaudio, Prompt_for_audio_transcript], generation_config=generation_config)
             try:
                 json_response = json.loads(response.text)
-                st.json(json_response,expanded=True)
+                st.json(json_response, expanded=True)
+                
+                # Add the download button for JSON
+                st.download_button(
+                    label="Download JSON",
+                    data=json.dumps(json_response, indent=4),
+                    file_name="transcript.json",
+                    mime="application/json"
+                )
+                
             except json.JSONDecodeError:
-                st.error("Failed to parse JSON response.")
+                st.write("Here is the raw output from the model:")
+                st.text(response.text)
 
 # Clean up temporary files after session
 @st.cache_data()
