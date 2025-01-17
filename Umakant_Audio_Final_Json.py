@@ -112,6 +112,7 @@ Your output must be in JSON format, structured as follows:
   "Important Words Used in the Conversation": ["word1", "word2", ...],
   "Questions Asked by the Customer": ["question1", "question2", ...],
   "Resolutions Given by the Agent": ["resolution1", "resolution2", ...],
+  "Suggestion For the Agent" :["Suggestion1", "Suggestion2",...]
   "Important Conclusion and Summary of Conversation": "summary text",
   "Client Satisfaction": true/false
 }
@@ -123,7 +124,7 @@ Here’s an example of how the output should look:
   "Emotion Tracking of Agents": ["neutral", "sympathetic", "neutral", "neutral", "neutral", "neutral", "neutral", "neutral"],
   "Important Words Used in the Conversation": ["billing statement", "late fee", "card expired", "waive", "adjustment", "coverage", "savings"],
   "Questions Asked by the Customer": [
-    "I'm calling because my latest billing statement seems higher than usual, and I don't understand why.",
+    "The client called  because his latest billing statement seems higher than usual, and he don't understand why.",
     "Would you be open to a quick review?"
   ],
   "Resolutions Given by the Agent": [
@@ -131,6 +132,7 @@ Here’s an example of how the output should look:
     "Updated the client's payment method to avoid future issues.",
     "Offered to review the client's current plan for potential savings."
   ],
+  "Suggestion For the agent":["Offer multiple option to cut cost of client".....],
   "Important Conclusion and Summary of Conversation": "The client called regarding an unexpectedly high billing statement due to a late fee. The agent identified the issue as a result of an expired card and waived the late fee. The agent also updated the client's payment details and offered to review their current plan for potential savings. The client expressed relief and gratitude.",
   "Client Satisfaction": true
 }
