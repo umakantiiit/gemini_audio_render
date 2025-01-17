@@ -97,8 +97,9 @@ Analyze the provided JSON input, which contains a customer service call transcri
 	3-Important Words Used in the Conversation: A list of key words or phrases that are significant to the conversation (e.g., billing, late fee, card expired, etc.).
 	4-Questions Asked by the Customer:ANALYSE THIS CAREFULLY.THIS SHOULD INCLUDE WHY A CLIENT CALLED CUSTOMER SERVICE.
 	5-Resolutions Given by the Agent: A list of resolutions or actions taken by the agent to address the client's concerns.
-	6-Important Conclusion and Summary of Conversation: A concise summary of the conversation, including the main issue, resolution, and any additional actions taken.
-	7-Client Satisfaction: A boolean value (true or false) indicating whether the client seemed satisfied with the agent's response based on their emotions and statements.
+ 	6-Suggestions For Agents:Analyse carefully what the customer asks and what are the response given by the agent.Then decide what better we can suggest the Agent to improve.
+	7-Important Conclusion and Summary of Conversation: A concise summary of the conversation, including the main issue, resolution, and any additional actions taken.
+	8-Client Satisfaction: A boolean value (true or false) indicating whether the client seemed satisfied with the agent's response based on their emotions and statements.
 	
 Input:
 The JSON input provided contains the call transcript with speaker labels, their statements, and emotion labels.
