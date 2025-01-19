@@ -99,7 +99,7 @@ Analyze the provided JSON input, which contains a customer service call transcri
 	5-Resolutions Given by the Agent: A list of resolutions or actions taken by the agent to address the client's concerns.
  	6-Suggestions For Agents:Analyse carefully what the customer asks and what are the response given by the agent.Then decide what better we can suggest the Agent to improve.
 	7-Important Conclusion and Summary of Conversation: A concise summary of the conversation, including the main issue, resolution, and any additional actions taken.
- 	8-Entity Detection:A list of entity detected in the provided transcript (Carefully analyse this to find out the entities correctly )
+ 	8-Entity Detection:A list of entity detected in the provided transcript (Carefully analyse this to find out the entities correctly),Most probable entities are Organisation,Person,Email address,Location,Duration
 	9-Client Satisfaction: A boolean value (true or false) indicating whether the client seemed satisfied with the agent's response based on their emotions and statements.
 	
 Input:
@@ -115,7 +115,7 @@ Your output must be in JSON format, structured as follows:
   "Resolutions Given by the Agent": ["resolution1", "resolution2", ...],
   "Suggestion For the Agent" :["Suggestion1", "Suggestion2",...]
   "Important Conclusion and Summary of Conversation": "summary text",
-  "Entities Detected:["Organization:(Newco, General, Allison, Allison, Allison, B. Ben Hur)","Location":(4741 Pick Street, Fort Morgan, Colorado 80701),"Email address":(Adam turnermail.com),
+  "Entities Detected:["Organization:(Entity detected)","Location":(Location entity detected),"Email address":(email entity detected),
   "Client Satisfaction": true/false
 }
 
@@ -136,6 +136,7 @@ Here’s an example of how the output should look:
   ],
   "Suggestion For the agent":["Offer multiple option to cut cost of client".....],
   "Important Conclusion and Summary of Conversation": "The client called regarding an unexpectedly high billing statement due to a late fee. The agent identified the issue as a result of an expired card and waived the late fee. The agent also updated the client's payment details and offered to review their current plan for potential savings. The client expressed relief and gratitude.",
+  "Entities Detected:["Organization:(Newco, General, Allison, Allison, Allison, B. Ben Hur)","Location":(4741 Pick Street, Fort Morgan, Colorado 80701),"Email address":(Adam turnermail.com),
   "Client Satisfaction": true
 }
 
