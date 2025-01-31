@@ -5,7 +5,7 @@ from pathlib import Path
 import json
 
 # Configure the generative AI API
-genai.configure(api_key='AIzaSyBulZ3Sru9TqLb38sarxaRuf05dUtsyg9s')
+genai.configure(api_key='AIzaSyBNkK3x3w6H-mBVgFeqL8a2TKTBPejsFvE')
 
 # Helper function to upload files to Gemini
 def upload_to_gemini(path, mime_type=None):
